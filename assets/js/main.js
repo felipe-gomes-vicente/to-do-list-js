@@ -43,10 +43,12 @@ function createdTagLi(task) {
   let btnUpdated = document.createElement('button');
   btnUpdated.classList.add('btnAction');
   btnUpdated.innerHTML = '<i class="fa fa-pencil"></i>';
+  btnUpdated.setAttribute('onclick', 'updateTask('+task.id+')');
 
   let btnDelete = document.createElement('button');
   btnDelete.classList.add('btnAction');
   btnDelete.innerHTML = '<i class="fa fa-trash"></i>';
+  btnDelete.setAttribute('onclick', 'deleteTask('+task.id+')');
 
   div.appendChild(btnUpdated);
   div.appendChild(btnDelete);
@@ -54,4 +56,12 @@ function createdTagLi(task) {
   li.appendChild(span);
   li.appendChild(div);
   return li;
+}
+
+function updateTask(idTask) {
+  alert(idTask)
+}
+
+function deleteTask(idTask) {
+  alert(idTask)
 }

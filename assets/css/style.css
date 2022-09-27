@@ -79,6 +79,7 @@ body {
   cursor: pointer;
   background-color: #2B2A2A;
   color: #FFF;
+  outline: none;
 }
 
 .btnAction:hover {
