@@ -86,3 +86,94 @@ body {
   opacity: .3;
   color: #DDD;
 }
+
+#modelView {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #191818;
+    border: 1px solid #2f2e2e;
+    width: 415px;
+    border-radius: 12px;
+    z-index: 200;
+    display: none;
+}
+
+#modelView.open {
+  display: block ;
+}
+
+#modelViewBackground {
+  position: fixed;
+  top: 0;
+  background-color: #0C0C0C;
+  bottom: 0;
+  left: 0;
+  opacity: .9;
+  z-index: 100;
+  right: 0;
+  display: none;
+}
+
+#modelViewBackground.open {
+  display: block;
+}
+
+#modelBtnClosed {
+  position: absolute;
+  top: -28px;
+  right: -24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #2B2A2A;
+  background-color: #2B2A2A;
+  color: #DDD;
+  outline: none;
+  cursor: pointer;
+}
+
+
+form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-line {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-line label {
+  margin-bottom: 7px;
+}
+
+.form-line input {
+  padding: 15px;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid #0C0C0C;
+  font-size: 1.2rem;
+  background-color: #2B2A2A;
+  color: #DDD;
+}
+
+.form-line button {
+  background-color: #2B2A2A;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  color: #CCC;
+  cursor: pointer;
+  height: 50px;
+  font-size: 1.2rem;
+  outline: none;
+  border: 0;
+}
+
+.form-line button:hover {
+  opacity: .5;
+}

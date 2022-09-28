@@ -1,6 +1,11 @@
 const inputNewTask = document.querySelector("#inputNewTask");
 const btnAddTask = document.querySelector("#btnAddTask");
 const listTasks = document.querySelector("#listTasks");
+const modelView = document.querySelector("#modelView");
+const modelViewBackground = document.querySelector("#modelViewBackground");
+const modelBtnClosed = document.querySelector("#modelBtnClosed");
+const btnUpdateTask = document.querySelector("#btnUpdateTask");
+const inputTaskNameUpdate = document.querySelector("#inputTaskNameUpdate");
 
 inputNewTask.addEventListener('keypress', (event) => {
   if(event.key === 'Enter') {
@@ -11,6 +16,10 @@ inputNewTask.addEventListener('keypress', (event) => {
 
     addTask(task);
   }
+});
+
+modelBtnClosed.addEventListener('click', event => {
+  handleChangeModel();
 });
 
 btnAddTask.addEventListener('click', (event) => {
@@ -60,7 +69,10 @@ function createdTagLi(task) {
 }
 
 function updateTask(idTask) {
-  alert(idTask)
+  let li = document.getElementById(''+ idTask +'');
+  if(li) {
+    handleChangeModel();
+  }
 }
 
 function deleteTask(idTask) {
@@ -71,4 +83,9 @@ function deleteTask(idTask) {
       listTasks.removeChild(li);
     }
   }
+}
+
+function handleChangeModel() {
+  modelView.classList.toggle('open');
+  modelViewBackground.classList.toggle('open');
 }
