@@ -55,9 +55,14 @@ function generatedId() {
 }
 
 function addTask(task) {
-  let li = createdTagLi(task);
-  listTasks.appendChild(li);
-  inputNewTask.value = '';
+  if(inputNewTask.value !== '') {
+    let li = createdTagLi(task);
+    listTasks.appendChild(li);
+    inputNewTask.value = '';
+  } else {
+    alert('Adicione uma tarefa');
+    
+  }
 }
 
 function createdTagLi(task) {
