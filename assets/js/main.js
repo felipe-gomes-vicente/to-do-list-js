@@ -5,6 +5,7 @@ const modelView = document.querySelector("#modelView");
 const modelViewBackground = document.querySelector("#modelViewBackground");
 const modelBtnClosed = document.querySelector("#modelBtnClosed");
 const btnUpdateTask = document.querySelector("#btnUpdateTask");
+const idTaskUpdate = document.querySelector("#idTaskUpdate");
 const inputTaskNameUpdate = document.querySelector("#inputTaskNameUpdate");
 
 inputNewTask.addEventListener('keypress', (event) => {
@@ -28,6 +29,25 @@ btnAddTask.addEventListener('click', (event) => {
     id: generatedId(),
   }
   addTask(task);
+});
+
+btnUpdateTask.addEventListener('click', event => {
+  event.preventDefault();
+  let idTask = idTaskUpdate.innerHTML.replace('#', '');
+  let task = {
+    name: inputTaskNameUpdate.value,
+    id: idTask
+  }
+
+  let currentTask = document.getElementById(''+idTask+'');
+  
+  if(currentTask) {
+    let li = createdTagLi(task);
+    listTasks.replaceChild(li, currentTask);
+    handleChangeModel();
+  } else {
+    alert('Elemento HTML não encontrado!');
+  }
 });
 
 function generatedId() {
@@ -71,7 +91,11 @@ function createdTagLi(task) {
 function updateTask(idTask) {
   let li = document.getElementById(''+ idTask +'');
   if(li) {
+    idTaskUpdate.innerHTML = '#' + idTask;
+    inputTaskNameUpdate.value = li.innerText;
     handleChangeModel();
+  } else {
+    alert('Elemento HTML não encontrado!');
   }
 }
 
@@ -81,6 +105,8 @@ function deleteTask(idTask) {
     let li = document.getElementById(''+ idTask +'');
     if(li) {
       listTasks.removeChild(li);
+    } else {
+      alert('Elemento HTML não encontrado!');
     }
   }
 }
