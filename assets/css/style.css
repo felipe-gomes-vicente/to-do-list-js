@@ -87,6 +87,13 @@ body {
   color: #DDD;
 }
 
+.textTask {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 260px;
+  white-space: nowrap;
+}
+
 #modelView {
   position: fixed;
     top: 50%;
