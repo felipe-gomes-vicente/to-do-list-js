@@ -3,7 +3,7 @@ const btnAddTask = document.querySelector("#btnAddTask");
 const listTasks = document.querySelector("#listTasks");
 
 inputNewTask.addEventListener('keypress', (event) => {
-  if(event.keyCode === 13) {
+  if(event.key === 'Enter') {
     let task = {
       name: inputNewTask.value,
       id: generatedId(),
