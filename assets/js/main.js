@@ -33,6 +33,7 @@ function addTask(task) {
 
 function createdTagLi(task) {
   let li = document.createElement('li');
+  li.id = task.id;
 
   let span = document.createElement('span');
   span.classList.add('textTask');
@@ -63,5 +64,11 @@ function updateTask(idTask) {
 }
 
 function deleteTask(idTask) {
-  alert(idTask)
+  let confirm = window.confirm('Deseja Excluir?')
+  if(confirm) {
+    let li = document.getElementById(''+ idTask +'');
+    if(li) {
+      listTasks.removeChild(li);
+    }
+  }
 }
