@@ -1,7 +1,7 @@
 # TO DO List
 
 <h1 align="center">
-    <img alt="Gif application TO DO List" title="gif" src="" />
+    <img alt="Gif application TO DO List" title="gif" src="./.github/to-do-list.gif" />
 </h1>
 
 <br>
@@ -12,7 +12,7 @@ Add Item - Task can be added to the list of To-Do Tasks.
 Update Item - Lists the current list of to-do of the user, has option update task.
 delete it from the list altogether.
 Delete Item - Delete it from the list.
-This project aims to exercise the concepts learned so far: Logic, HTML, CSS and JavaScript;
+This project seeks to exercise the concepts learned so far: Logic, HTML, CSS and JavaScript;
 
 Watch it in action Deploy: [Click Here](https://felipe-gomes-vicente.github.io/to-do-list-js)
 
@@ -32,7 +32,7 @@ What was developed:
 <br />
 
 ## Image from the final application TO DO List:
- <img alt="Print TO DO List" title="TO DO List" src="" />
+ <img alt="Print TO DO List" title="TO DO List" src="./.github/to-do-list.png" />
 
 ## 🧪 Tools
 
