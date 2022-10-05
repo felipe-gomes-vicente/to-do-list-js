@@ -1,48 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/f223593715.js" crossorigin="anonymous" defer ></script>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>To Do List</title>
+    <title>Vite + React</title>
   </head>
   <body>
-    <main class="wrapper-app">
-      <div class="content-input">
-        <input
-          type="text"
-          id="inputNewTask"
-          placeholder="Adicione uma nova tarefa"
-        />
-        <button id="btnAddTask">
-          <i class="fa fa-plus"></i>
-        </button>
-      </div>
-
-      <ul id="listTasks">
-      </ul>
-    </main>
-
-    <div id="modelView">
-        <button id="modelBtnClosed">
-          <i class="fa fa-remove fa-2x"></i>
-        </button>
-        <h2 id="idTaskUpdate"></h2>
-        <br />
-        <hr />
-        <form action="">
-          <div class="form-line">
-            <label for="name">Nome</label>
-            <input type="text" id="inputTaskNameUpdate" />
-          </div>
-          <div class="form-line">
-            <button id="btnUpdateTask">Salvar</button>
-          </div>
-        </form>
-    </div>
-    <div id="modelViewBackground"></div>
-
-    <script src="./assets/js/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
