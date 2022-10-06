@@ -9,6 +9,14 @@ export const Section = styled.section`
   padding: 40px 40px 0;
 `;
 
+export const Form = styled.form`
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+`;
+
 export const Content = styled.div`
   width: 100%;
   display: flex;

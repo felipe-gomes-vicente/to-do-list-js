@@ -1,27 +1,34 @@
 import { useState } from 'react'
 import { FiCheckSquare, FiEdit, FiTrash } from 'react-icons/fi'
 
-import { Button, Content, Input, Li, List, Section } from './styles'
+import { Button, Content, Form, Input, Li, List, Section } from './styles'
 
 export function TaskList() {
   const [tasks, setTasks] = useState([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
-  function handleCreateNewTask() {
-    if (!newTaskTitle) return
+  function handleCreateNewTask(event) {
+    if (!newTaskTitle)  {
+      event.preventDefault();
 
-    const newTask = {
-      id: Math.random(),
-      title: newTaskTitle
+      alert("Adicione uma tarefa!"); 
+      return
+    } else {
+      event.preventDefault();
+      
+      const newTask = {
+        id: Math.random(),
+        title: newTaskTitle
+      }
+
+      setTasks(oldState => [...oldState, newTask]);
+      setNewTaskTitle('');
     }
-
-    setTasks(oldState => [...oldState, newTask]);
-    setNewTaskTitle('');
   }
   
   return(
     <Section>
-      <Content>
+      <Form onSubmit={handleCreateNewTask}>
         <Input 
           type="text" 
           placeholder="Adicione uma nova tarefa" 
@@ -29,10 +36,10 @@ export function TaskList() {
           value={newTaskTitle}
         />
 
-        <Button type='submit' onClick={handleCreateNewTask} >
+        <Button type='submit' >
           <FiCheckSquare size={20} />
         </Button>
-      </Content>
+      </Form>
 
       <Content>
         <List>
