@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { FiPlus } from 'react-icons/fi'
 
 function App() {
 
   return (
-    <h1>TO DO List</h1>
+    <h1>TO DO List <FiPlus/> </h1>
   )
 }
 
