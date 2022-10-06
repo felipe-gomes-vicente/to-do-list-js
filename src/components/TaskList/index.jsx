@@ -25,6 +25,10 @@ export function TaskList() {
       setNewTaskTitle('');
     }
   }
+
+  function handleRemoveTask(id) {
+    setTasks(tasks.filter(task => task.id !== id));
+  }
   
   return(
     <Section>
@@ -51,7 +55,11 @@ export function TaskList() {
                 <Button type='button'>
                   <FiEdit />
                 </Button>
-                <Button style={{ marginLeft: '10px' }} type='button'>
+                <Button 
+                  style={{ marginLeft: '10px' }} 
+                  type='button' 
+                  onClick={() => handleRemoveTask(task.id)}
+                >
                   <FiTrash />
                 </Button>
               </div>
