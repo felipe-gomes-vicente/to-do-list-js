@@ -7,6 +7,7 @@ export function TaskList() {
   const [tasks, setTasks] = useState([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
   const [ editing, setEditing ] = useState(false);
+  const [selectedTaskId, setSelectedTaskId] = useState(-1);
   
   function handleCreateNewTask(event) {
     if (!newTaskTitle)  {
@@ -30,8 +31,21 @@ export function TaskList() {
   function handleEditTask(taskToEdit) {
     setEditing(true)
     const select = tasks.find(task => task.id === taskToEdit )
-    if(select) setNewTaskTitle(select.title);
+    if(select) { 
+      setNewTaskTitle(select.title);
+      setSelectedTaskId(select.id);
+    } else {
+      setNewTaskTitle("");
+      setSelectedTaskId(-1);
+    }
   }
+
+  function handleUpdateTask(event) {
+    event.preventDefault();
+    setEditing(false);
+    setTasks((prevTasks) => prevTasks.map(item => item.id === selectedTaskId ? ({ ...item, title: newTaskTitle }) : item))
+    setNewTaskTitle('');
+}
 
   function handleRemoveTask(id) {
     setTasks(tasks.filter(task => task.id !== id));
@@ -39,7 +53,7 @@ export function TaskList() {
   
   return(
     <Section>
-      <Form onSubmit={handleCreateNewTask}>
+      <Form onSubmit={ editing ? handleUpdateTask : handleCreateNewTask}>
         <Input 
           type="text" 
           placeholder="Adicione uma nova tarefa" 
