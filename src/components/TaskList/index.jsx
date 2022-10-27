@@ -6,7 +6,8 @@ import { Button, Content, Form, Input, Li, List, Section } from './styles'
 export function TaskList() {
   const [tasks, setTasks] = useState([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
-
+  const [ editing, setEditing ] = useState(false);
+  
   function handleCreateNewTask(event) {
     if (!newTaskTitle)  {
       event.preventDefault();
@@ -26,6 +27,12 @@ export function TaskList() {
     }
   }
 
+  function handleEditTask(taskToEdit) {
+    setEditing(true)
+    const select = tasks.find(task => task.id === taskToEdit )
+    if(select) setNewTaskTitle(select.title);
+  }
+
   function handleRemoveTask(id) {
     setTasks(tasks.filter(task => task.id !== id));
   }
@@ -41,7 +48,7 @@ export function TaskList() {
         />
 
         <Button type='submit' >
-          <FiCheckSquare size={20} />
+          { editing ? 'Salvar' : <FiCheckSquare size={20} />}
         </Button>
       </Form>
 
@@ -52,7 +59,7 @@ export function TaskList() {
               <span>{task.title}</span>
 
               <div>
-                <Button type='button'>
+                <Button type='button' onClick={() => handleEditTask(task.id)}>
                   <FiEdit />
                 </Button>
                 <Button 
