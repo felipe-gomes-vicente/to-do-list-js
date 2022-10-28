@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FiCheckSquare, FiEdit, FiTrash } from 'react-icons/fi'
+import { FiCheckSquare, FiArrowRightCircle, FiEdit, FiTrash } from 'react-icons/fi'
 
 import { Button, Content, Form, Input, Li, List, Section } from './styles'
 
@@ -62,7 +62,7 @@ export function TaskList() {
         />
 
         <Button type='submit' >
-          { editing ? 'Salvar' : <FiCheckSquare size={20} />}
+          { editing ? <FiArrowRightCircle size={20} /> : <FiCheckSquare size={20} />}
         </Button>
       </Form>
 
